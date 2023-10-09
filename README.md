@@ -2,6 +2,6 @@
 
 - New Project update
 
-- **_ QLearning _**
+- **\_ Computer Vision**
 
-  - Reinforcement Learning
+  - Deep Learning
