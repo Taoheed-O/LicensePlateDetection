@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['license-plates']
+
+roboflow:
+  workspace: lemons
+  project: number-plates-i91pc
+  version: 10
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/lemons/number-plates-i91pc/dataset/10
