@@ -1,4 +1,4 @@
-### Personal Protective Equipment Detection using YOLOv8
+### Car License Plate Detection using YOLOv8
 
 ##### This project uses the YOLOv8 model on custom data.
 
