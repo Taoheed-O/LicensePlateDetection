@@ -1,13 +1,13 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: C:\Users\BAB AL SAFA\Desktop\MINE\LicensePlateDetection\datasets/train/images
+val: C:\Users\BAB AL SAFA\Desktop\MINE\LicensePlateDetection\datasets/valid/images
+test: C:\Users\BAB AL SAFA\Desktop\MINE\LicensePlateDetection\datasets/test/images
 
-nc: 1
-names: ['license-plates']
+nc: 2
+names: ['0', 'object']
 
 roboflow:
-  workspace: lemons
-  project: number-plates-i91pc
-  version: 10
+  workspace: college-e9cj2
+  project: license-plate-detection-l8xs4
+  version: 1
   license: CC BY 4.0
-  url: https://universe.roboflow.com/lemons/number-plates-i91pc/dataset/10
+  url: https://universe.roboflow.com/college-e9cj2/license-plate-detection-l8xs4/dataset/1

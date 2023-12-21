@@ -1,8 +1,8 @@
 
-number plates - v10 2023-04-22 10:30am
+License plate detection - v1 2023-11-10 1:09pm
 ==============================
 
-This dataset was exported via roboflow.com on April 29, 2023 at 1:12 PM GMT
+This dataset was exported via roboflow.com on November 13, 2023 at 12:39 PM GMT
 
 Roboflow is an end-to-end computer vision platform that helps you
 * collaborate with your team on computer vision projects
@@ -17,17 +17,13 @@ visit https://github.com/roboflow/notebooks
 
 To find over 100k other datasets and pre-trained models, visit https://universe.roboflow.com
 
-The dataset includes 2575 images.
-License-plates are annotated in YOLOv8 format.
+The dataset includes 3720 images.
+License-plate are annotated in YOLOv8 format.
 
 The following pre-processing was applied to each image:
 * Auto-orientation of pixel data (with EXIF-orientation stripping)
-* Resize to 640x640 (Fill (with center crop))
+* Resize to 640x640 (Stretch)
 
-The following augmentation was applied to create 3 versions of each source image:
-* Random rotation of between -15 and +15 degrees
-* Random shear of between -15° to +15° horizontally and -15° to +15° vertically
-* Random brigthness adjustment of between -27 and +27 percent
-* Random exposure adjustment of between -25 and +25 percent
+No image augmentation techniques were applied.
 
 
