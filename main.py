@@ -31,6 +31,7 @@ new_frame_time = 0
 while True:
     new_frame_time = time.time()
     success, img = cap.read()
+    img = cv2.resize(img, (1000, 600))
     results = model(img, stream=True)
     person = model_obj(img, stream=True)
     for r in results:
