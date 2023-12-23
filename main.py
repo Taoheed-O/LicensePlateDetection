@@ -6,7 +6,7 @@ import time
 
 
 
-cap = cv2.VideoCapture("C:\\Users\\BAB AL SAFA\\Desktop\\MINE\\LicensePlateDetection\\videos\\traffic_1.mp4")  # For Video
+cap = cv2.VideoCapture("C:\\Users\\BAB AL SAFA\\Desktop\\MINE\\LicensePlateDetection\\videos\\sample.mp4.mp4")  # For Video
 
 model = YOLO("C:\\Users\\BAB AL SAFA\\Desktop\\MINE\\LicensePlateDetection\\weights\\best.pt")
 
@@ -31,7 +31,7 @@ new_frame_time = 0
 while True:
     new_frame_time = time.time()
     success, img = cap.read()
-    img = cv2.resize(img, (1000, 600))
+    #img = cv2.resize(img, (1000, 600))
     results = model(img, stream=True)
     person = model_obj(img, stream=True)
     for r in results:
