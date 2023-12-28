@@ -34,6 +34,7 @@ while True:
     img = cv2.resize(img, (1000, 600))
     results = model(img, stream=True)
     person = model_obj(img, stream=True)
+# for license plate class
     for r in results:
         boxes = r.boxes
         for box in boxes:
