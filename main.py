@@ -3,15 +3,17 @@ import cv2
 import cvzone
 import math
 import time
+import pytesseract
+
+pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 
+cap = cv2.VideoCapture("C:\\Users\\DELL\\LicensePlateDetection\\videos\\traffic_1.mp4")  # For Video
 
-cap = cv2.VideoCapture("C:\\Users\\BAB AL SAFA\\Desktop\\MINE\\LicensePlateDetection\\videos\\traffic_1.mp4")  # For Video
-
-model = YOLO("C:\\Users\\BAB AL SAFA\\Desktop\\MINE\\LicensePlateDetection\\weights\\best.pt")
+model = YOLO("C:\\Users\\DELL\\LicensePlateDetection\\weights\\best.pt")
 
 #Adding car to the detection
-model_obj = YOLO("C:\\Users\\BAB AL SAFA\\Desktop\\MINE\\LicensePlateDetection\\weights\\yolov8n.pt")
+model_obj = YOLO("C:\\Users\\DELL\\LicensePlateDetection\\weights\\yolov8n.pt")
 
 classNames = ['0', 'object']
 class_default = ['person', 'bicycle', 'car', 'motorbike', 'aeroplane', 'bus', 'train', 'truck', 'boat',
@@ -32,8 +34,10 @@ while True:
     new_frame_time = time.time()
     success, img = cap.read()
     img = cv2.resize(img, (1000, 600))
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    boxes = pytesseract.image_to_data(img)
     results = model(img, stream=True)
-    person = model_obj(img, stream=True)
+    car = model_obj(img, stream=True)
 # for license plate class
     for r in results:
         boxes = r.boxes
@@ -55,7 +59,7 @@ while True:
 
 
 # car detection class
-    for r in person:
+    for r in car:
         boxes = r.boxes
         for box in boxes:
             # Bounding Box
